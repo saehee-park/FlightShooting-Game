@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10552eb7d96fd504a99f439b93e81d65
+guid: 56210b81da1dea44a8c7373a75e87e08
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa93d33fcca5ee34cb751a11f7fff117
-      internalID: 533793629
+      spriteID: 51ed4281eb0c7d34c9840fdccd4d171b
+      internalID: 2047573551
       vertices: []
       indices: 
       edges: []
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77346aad36d6e784d847b3b5a320e9d9
-      internalID: 1596911163
+      spriteID: 926126798141cfa4895d09652b0e0c28
+      internalID: -1217610417
       vertices: []
       indices: 
       edges: []
@@ -173,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1229fd7224b7db44a1d5fd69a1e2a8d
-      internalID: 1730531501
+      spriteID: 3197ff3e2749f154bab9ec99b67ed8f2
+      internalID: 569077001
       vertices: []
       indices: 
       edges: []
@@ -190,9 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy01_Idle_0: 533793629
-      Enemy01_Idle_1: 1596911163
-      Enemy01_Idle_2: 1730531501
+      Enemy01_Idle_0: 2047573551
+      Enemy01_Idle_1: -1217610417
+      Enemy01_Idle_2: 569077001
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
