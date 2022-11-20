@@ -11,7 +11,11 @@ public class PlayerHP : MonoBehaviour
     private PlayerController playerController;
 
     public float MaxHP => maxHP; //maxHP변수에 접근할 수 있는 프로퍼티(Get만 가능)
-    public float CurrentHP => currentHP; //currentHP변수에 접근할 수 있는 프로퍼티(Get만 가능)
+    public float CurrentHP // currentHP변수에 접근할 수 있는 프로퍼티 (Set, Get 가능)
+    {
+        set => currentHP = Mathf.Clamp(value, 0, maxHP);
+        get => currentHP;
+    }
 
     private void Awake()
     {
