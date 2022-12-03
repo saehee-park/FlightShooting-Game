@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour
 {
     [SerializeField]
-    private float maxHP = 10;
+    private float maxHP = 50;
     private float currentHP;
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;

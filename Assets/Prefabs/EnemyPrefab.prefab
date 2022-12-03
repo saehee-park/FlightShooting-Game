@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f8bc17f3f57ef4893d8b1f3fc62e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
   scorePoint: 100
   explosionPrefab: {fileID: 3302527851552341598, guid: 38a9887ee9b1077459a59428491cd36b, type: 3}
   itemPrefabs:
