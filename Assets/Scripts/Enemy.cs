@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
 
     private void SpawnItem()
     {
-        // 파워업(5%), 폭탄+1(5%), 체력회복(15%), 얼음 효과(10%), 이동속도증가(10%), 일시무적(5%)
+        // 파워업(5%), 폭탄+1(5%), 체력회복(15%), 얼음 효과(10%), 이동속도증가(10%), 일시무적(5%), 점수증가(5%)
         int spawnItem = Random.Range(0, 100);
         if (spawnItem < 5)
         {
@@ -77,6 +77,10 @@ public class Enemy : MonoBehaviour
         else if (spawnItem < 50)
         {
             Instantiate(itemPrefabs[5], transform.position, Quaternion.identity);
+        }
+        else if (spawnItem < 55)
+        {
+            Instantiate(itemPrefabs[6], transform.position, Quaternion.identity);
         }
     }
 }

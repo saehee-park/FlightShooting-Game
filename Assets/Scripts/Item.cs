@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType { PowerUp = 0, Boom, HP, Ice, SpeedUp, Invincible };
+public enum ItemType { PowerUp = 0, Boom, HP, Ice, SpeedUp, Invincible, ScoreUp };
 
 public class Item : MonoBehaviour
 {
     [SerializeField]
     private ItemType itemType;
     private Movement2D movement2D;
+
+    private PlayerController playerController; //플레이어 점수(Score)에 접근하기 위해 
 
     private void Awake()
     {
@@ -18,6 +20,8 @@ public class Item : MonoBehaviour
         float y = Random.Range(-1.0f, 1.0f);
 
         movement2D.MoveTo(new Vector3(x, y, 0));
+
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,6 +60,9 @@ public class Item : MonoBehaviour
                 break;
             case ItemType.Invincible:
                 player.GetComponent<PlayerHP>().StartCoroutine("Invincible");
+                break;
+            case ItemType.ScoreUp:
+                playerController.Score += 2000;
                 break;
         }
     }
