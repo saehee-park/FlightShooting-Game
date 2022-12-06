@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private StageData stageData;
     [SerializeField]
-    private KeyCode keyCodeAttack = KeyCode.Space;
+    private KeyCode keyCodeAttack1 = KeyCode.Space;
+    [SerializeField]
+    private KeyCode keyCodeAttack2 = KeyCode.X;
     [SerializeField]
     private KeyCode keyCodeBoom = KeyCode.Z;
     private bool isDie = false;
@@ -45,11 +47,22 @@ public class PlayerController : MonoBehaviour
         movement2D.MoveTo(new Vector3(x,y,0));
 
         // 공격 키를 Down/Up으로 공격 시작/종료
-        if (Input.GetKeyDown(keyCodeAttack))
+        if (Input.GetKeyDown(keyCodeAttack1))
         {
+            weapon.AttackLevel = 1;
             weapon.StartFiring();
         }
-        else if (Input.GetKeyUp(keyCodeAttack))
+        else if (Input.GetKeyUp(keyCodeAttack1))
+        {
+            weapon.StopFiring();
+        }
+
+        if (Input.GetKeyDown(keyCodeAttack2))
+        {
+            weapon.AttackLevel = 3;
+            weapon.StartFiring();
+        }
+        else if (Input.GetKeyUp(keyCodeAttack2))
         {
             weapon.StopFiring();
         }
