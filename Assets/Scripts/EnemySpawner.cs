@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private int maxEnemyCount = 100; //현재 스테이지의 최대 적 생성 숫자
     [SerializeField]
-    private bool isPaused = false;
+    private long freezeTime;
+    [SerializeField]
+    private long currentTime;
 
     private void Awake()
     {
@@ -38,15 +41,22 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine("SpawnEnemy");
     }
 
+    public long UnixTimeNow()
+    {
+        var timeSpan = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0));
+        return (long)timeSpan.TotalSeconds;
+    }
+
     private IEnumerator SpawnEnemy()
     {
         int currentEnemyCount = 0; //적 생성 숫자 카운트용 변수
         while (true)
         {
-            if (!isPaused)
+            currentTime = UnixTimeNow();
+            if (currentTime - freezeTime >= 1)
             {
                 // x 위치는 스테이지 크기 범위 내에서 임의의 값 선택
-                float positionX = Random.Range(stageData.LimitMin.x, stageData.LimitMax.x);
+                float positionX = UnityEngine.Random.Range(stageData.LimitMin.x, stageData.LimitMax.x);
                 // 적 캐릭터 생성
                 GameObject enemyClone = Instantiate(enemyPrefab, new Vector3(positionX, stageData.LimitMax.y + 1.0f, 0.0f), Quaternion.identity);
                 // 적 체력을 나타내는 Slider UI 생성 및 설정
@@ -66,9 +76,9 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SetPause(bool flag)
+    public void SetPause(long time)
     {
-        isPaused = flag;
+        freezeTime = time;
     }
 
     private void SpawnEnemyHPSlider(GameObject enemy)
