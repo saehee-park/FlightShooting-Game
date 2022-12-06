@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,19 @@ public class Movement2D : MonoBehaviour
     [SerializeField]
     private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
-    private bool isFrozen = false;
+    private long freezeTime;
+    [SerializeField]
+    private long currentTime;
+    public long UnixTimeNow()
+    {
+        var timeSpan = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0));
+        return (long)timeSpan.TotalSeconds;
+    }
 
     private void Update()
     {
-        if (isFrozen)
+        currentTime = UnixTimeNow();
+        if (currentTime - freezeTime < 1)
         {
             return;
         }
@@ -25,14 +34,11 @@ public class Movement2D : MonoBehaviour
         moveDirection = direction;
     }
 
-    public IEnumerator Freeze()
+    public void Freeze()
     {
+        freezeTime = UnixTimeNow();
         EnemySpawner enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
-        enemySpawner.SetPause(true);
-        isFrozen = true;
-        yield return new WaitForSeconds(1);
-        enemySpawner.SetPause(false);
-        isFrozen = false;
+        enemySpawner.SetPause(freezeTime);
     }
 }
 
