@@ -52,7 +52,7 @@ public class Item : MonoBehaviour
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach (GameObject enemy in enemies)
                 {
-                    enemy.GetComponent<Movement2D>().StartCoroutine("Freeze");
+                    enemy.GetComponent<Movement2D>().Freeze();
                 }
                 break;
             case ItemType.SpeedUp:
