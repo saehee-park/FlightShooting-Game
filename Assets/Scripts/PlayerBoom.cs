@@ -9,7 +9,7 @@ public class PlayerBoom : MonoBehaviour
     [SerializeField]
     private AudioClip boomAudio;  // 荤款靛 颇老
     [SerializeField]
-    private int damage = 100; // 气藕 单固瘤
+    private int damage = 40; // 气藕 单固瘤
     private float boomDelay = 0.5f;  // 气藕 捞悼 矫埃 (0.5檬 饶 气惯)
     private Animator animator;
     private AudioSource audioSource;
