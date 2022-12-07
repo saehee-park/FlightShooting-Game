@@ -46,7 +46,7 @@ public class Item : MonoBehaviour
                 player.GetComponent<Weapon>().BoomCount++;
                 break;
             case ItemType.HP:
-                player.GetComponent<PlayerHP>().CurrentHP += 2;
+                player.GetComponent<PlayerHP>().CurrentHP += 10;
                 break;
             case ItemType.Ice:
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -62,7 +62,7 @@ public class Item : MonoBehaviour
                 player.GetComponent<PlayerHP>().StartCoroutine("Invincible");
                 break;
             case ItemType.ScoreUp:
-                playerController.Score += 2000;
+                playerController.Score += 1000;
                 break;
         }
     }
