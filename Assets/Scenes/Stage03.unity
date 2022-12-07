@@ -757,7 +757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: GameOver
   stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
-  keyCodeAttack: 32
+  keyCodeAttack1: 32
+  keyCodeAttack2: 120
   keyCodeBoom: 122
 --- !u!114 &304601036
 MonoBehaviour:
@@ -1394,7 +1395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 94ae66f1788fcaa4baf8256c24e810e8, type: 2}
-  enemyPrefab: {fileID: 7262464595697969127, guid: c530b1e76b452454d8a12819aa972eda, type: 3}
+  enemyPrefab: {fileID: 7262464595697969127, guid: ed7240e21a3dbd743825272c48209583, type: 3}
   enemyHPSliderPrefab: {fileID: 1385283239812284155, guid: 62255a43bf0d0634da5451b04818f825, type: 3}
   canvasTransform: {fileID: 265692177}
   bgmController: {fileID: 2142995699}
@@ -1402,7 +1403,7 @@ MonoBehaviour:
   panelBossHP: {fileID: 1638934625}
   boss: {fileID: 107367185}
   spawnTime: 0.35
-  maxEnemyCount: 30
+  maxEnemyCount: 100
   freezeTime: 0
   currentTime: 0
 --- !u!4 &827482709
