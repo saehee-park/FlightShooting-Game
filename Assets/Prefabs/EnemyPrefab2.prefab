@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3612976227097946191}
   - component: {fileID: 3402607291291976140}
   m_Layer: 0
-  m_Name: EnemyPrefab
+  m_Name: EnemyPrefab2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f8bc17f3f57ef4893d8b1f3fc62e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
-  scorePoint: 100
+  damage: 6
+  scorePoint: 150
   explosionPrefab: {fileID: 3302527851552341598, guid: 38a9887ee9b1077459a59428491cd36b, type: 3}
   itemPrefabs:
   - {fileID: 5081447444425475031, guid: da1a222d89b61ac41bc0972328ac86a8, type: 3}
